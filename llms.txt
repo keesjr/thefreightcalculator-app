@@ -1,0 +1,26 @@
+# Freight Calculator Tools
+
+> thefreightcalculator.app hosts a free suite of six browser-based freight calculators from
+> Freight Calculator by Sea & Shore Services. All calculations run client-side; no data is uploaded.
+
+## Tools on this page
+- CBM calculator — carton dimensions to cubic metres and total shipment volume.
+- Chargeable & volumetric weight calculator — sea, air, courier and road divisors.
+- Container load calculator — 20ft, 40ft and 40ft High Cube fill and container count.
+- Loading metre (LDM) calculator — European road freight floor space and chargeable weight.
+- Freight cost estimator — lane rate plus THC, BAF, customs clearance and documentation.
+- Cargo density calculator — kg per CBM, to predict weight-billed vs volume-billed cargo.
+
+## Reference values
+- CBM = L(m) x W(m) x H(m) x quantity.
+- Volumetric weight = CBM x divisor. Air 167 kg/CBM (IATA 1:6000), courier 200 kg/CBM (1:5000),
+  sea LCL 1000 kg/CBM (weight-or-measure), European road 333 kg/CBM.
+- Chargeable weight = max(gross weight, volumetric weight).
+- Container usable capacity: 20ft ~28 CBM / 28,000 kg; 40ft ~58 CBM / 26,500 kg;
+  40ft High Cube ~66 CBM / 26,000 kg; 45ft High Cube ~76 CBM / 27,700 kg.
+- LDM = (L(m) x W(m) / 2.4) x qty / stack layers. Standard trailer = 13.6 LDM. 1 LDM ~ 1750 kg.
+- FCL vs LCL break-even: roughly 13-15 CBM.
+
+## Related
+- [Freight Calculator brand site](https://www.thefreightcalculator.ai/) — services, glossary, FAQ.
+- [Android app](https://play.google.com/store/apps/details?id=com.seaandshoreservices.freightcalculator)

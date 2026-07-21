@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Free CBM &amp; Chargeable Weight Calculator | Freight Calculator Tools</title>
+<meta name="description" content="Free online freight calculators: CBM calculator, chargeable &amp; volumetric weight calculator, 20ft/40ft container load calculator, loading metre (LDM), freight cost estimator and cargo density. No signup.">
+
+<link rel="canonical" href="https://www.thefreightcalculator.app/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="alternate" hreflang="en" href="https://www.thefreightcalculator.app/">
+<link rel="alternate" hreflang="x-default" href="https://www.thefreightcalculator.app/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Freight Calculator Tools">
+<meta property="og:title" content="Free CBM &amp; Chargeable Weight Calculator | Freight Calculator Tools">
+<meta property="og:description" content="Six free freight calculators: CBM, chargeable weight, container load, loading metre, freight cost and cargo density. Instant, no signup.">
+<meta property="og:url" content="https://www.thefreightcalculator.app/">
+<meta property="og:image" content="https://www.thefreightcalculator.app/assets/screenshot-calculator.jpg">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free CBM &amp; Chargeable Weight Calculator">
+<meta name="twitter:description" content="Six free freight calculators — CBM, chargeable weight, container load, LDM, freight cost, density.">
+<meta name="twitter:image" content="https://www.thefreightcalculator.app/assets/screenshot-calculator.jpg">
+
+<meta name="author" content="Sea &amp; Shore Services">
+<meta name="theme-color" content="#F4610A">
+<meta name="apple-mobile-web-app-title" content="Freight Tools">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/app-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="dns-prefetch" href="//play.google.com">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --o:#F4610A; --o-2:#FF7A2B; --o-deep:#C2410C; --o-dark:#8A2C06;
+  --ink:#17100C; --ink-2:#4A3B33; --ink-3:#7C6A60;
+  --cream:#FFF8F3; --line:#F0DFD3; --max:1180px;
+  --shadow:0 1px 2px rgba(23,16,12,.04),0 12px 32px -12px rgba(194,65,12,.16);
+  --font:system-ui,-apple-system,"Segoe UI Variable Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:var(--cream);color:var(--ink);line-height:1.65;font-size:17px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--o-deep);text-decoration:none}a:hover{text-decoration:underline}
+h1,h2,h3,h4{line-height:1.14;letter-spacing:-.028em;font-weight:800}
+h1{font-size:clamp(2.1rem,5.4vw,3.5rem)}
+h2{font-size:clamp(1.6rem,3.2vw,2.3rem)}
+h3{font-size:1.14rem;letter-spacing:-.018em}
+p{text-wrap:pretty}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:22px}
+.narrow{max-width:900px}
+section{padding:64px 0;scroll-margin-top:76px}
+.eyebrow{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--o-deep);background:#FFEDE1;border:1px solid #FFD9C2;padding:6px 14px;border-radius:99px;margin-bottom:16px}
+.lede{font-size:1.08rem;color:var(--ink-2);max-width:66ch}
+:focus-visible{outline:3px solid var(--o);outline-offset:3px;border-radius:6px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:750;font-size:.98rem;
+  padding:14px 26px;border-radius:99px;border:2px solid transparent;cursor:pointer;text-decoration:none!important;
+  transition:transform .16s,box-shadow .16s,background .16s;font-family:inherit}
+.btn-primary{background:var(--o);color:#fff;box-shadow:0 10px 26px -8px rgba(244,97,10,.6)}
+.btn-primary:hover{background:#E15607;transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--o-deep);border-color:#FFD9C2}
+.btn-ghost:hover{border-color:var(--o);transform:translateY(-2px)}
+.btn-onDark{background:#fff;color:var(--o-deep)}.btn-onDark:hover{transform:translateY(-2px)}
+.btn-outlineLight{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.42)}
+.btn-outlineLight:hover{background:rgba(255,255,255,.16)}
+
+header{position:sticky;top:0;z-index:60;background:rgba(255,248,243,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:14px;height:68px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:850;font-size:1.05rem;letter-spacing:-.03em;color:var(--ink);text-decoration:none!important}
+.brand img{width:33px;height:33px;border-radius:9px}
+.brand span{color:var(--o)}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links a{color:var(--ink-2);font-weight:650;font-size:.92rem;text-decoration:none!important}
+.nav-links a:hover{color:var(--o)}
+.nav .btn{padding:10px 20px;font-size:.9rem}
+@media(max-width:960px){.nav-links a:not(.btn){display:none}}
+
+.hero{background:radial-gradient(120% 130% at 12% 8%,#FF8A3D,#F4610A 38%,#C2410C 74%,#8A2C06);color:#fff;padding:64px 0 70px;position:relative;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;width:820px;height:820px;border-radius:50%;top:-300px;left:-230px;border:2px solid rgba(255,255,255,.1);
+  box-shadow:0 0 0 90px rgba(255,255,255,.05),0 0 0 200px rgba(255,255,255,.03);z-index:-1}
+.hero .eyebrow{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.3);color:#fff}
+.hero h1{margin-bottom:18px;max-width:18ch}
+.hero h1 em{font-style:normal;color:#FFE2CE}
+.hero p{font-size:1.1rem;color:rgba(255,255,255,.93);max-width:60ch;margin-bottom:28px}
+.jump{display:flex;flex-wrap:wrap;gap:9px}
+.jump a{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:.9rem;font-weight:650;
+  padding:9px 16px;border-radius:99px;text-decoration:none!important;transition:background .15s}
+.jump a:hover{background:rgba(255,255,255,.26)}
+
+/* tool card */
+.tool{background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px;box-shadow:var(--shadow);margin-bottom:26px}
+.tool-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px}
+.tool-ico{width:52px;height:52px;flex:0 0 auto;border-radius:16px;background:linear-gradient(140deg,#FFEDE1,#FFD9C2);display:grid;place-items:center;font-size:1.45rem}
+.tool-head h2{font-size:1.5rem;margin-bottom:5px}
+.tool-head p{color:var(--ink-2);font-size:.96rem;max-width:70ch}
+.row{display:grid;gap:12px;margin-bottom:14px}
+.c2{grid-template-columns:repeat(2,1fr)}.c3{grid-template-columns:repeat(3,1fr)}.c4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:760px){.c3,.c4{grid-template-columns:repeat(2,1fr)}.tool{padding:24px 20px}}
+@media(max-width:440px){.c2,.c3,.c4{grid-template-columns:1fr}}
+.field label{display:block;font-size:.71rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.field input,.field select{width:100%;font-family:inherit;font-size:1rem;font-weight:650;color:var(--ink);
+  padding:13px 14px;border:2px solid var(--line);border-radius:14px;background:#FFFDFB;transition:border-color .15s}
+.field input:focus,.field select:focus{border-color:var(--o);outline:none;background:#fff}
+.results{display:grid;gap:11px;margin-top:20px}
+.out{background:var(--ink);color:#fff;border-radius:16px;padding:17px 20px}
+.out b{display:block;font-size:1.6rem;font-weight:850;letter-spacing:-.03em;color:var(--o-2);line-height:1.2}
+.out span{font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.6);font-weight:700}
+.out.hi{background:var(--o)}.out.hi b{color:#fff}.out.hi span{color:rgba(255,255,255,.84)}
+.verdict{margin-top:16px;background:#FFF3EA;border:1px solid #FFD9C2;border-radius:14px;padding:15px 18px;font-size:.94rem;color:var(--ink-2)}
+.verdict strong{color:var(--o-deep)}
+.formula{margin-top:16px;font-size:.87rem;color:var(--ink-3);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#FFFAF6;border:1px dashed var(--line);border-radius:12px;padding:11px 14px}
+
+.tbl{width:100%;border-collapse:collapse;margin-top:8px;font-size:.94rem;overflow:hidden;border-radius:14px}
+.tbl th,.tbl td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
+.tbl th{background:#FFF3EA;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-weight:800}
+.tbl td:first-child{font-weight:700}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:11px}
+.faq summary{cursor:pointer;list-style:none;padding:19px 54px 19px 22px;font-weight:750;font-size:1rem;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:22px;top:50%;transform:translateY(-50%);font-size:1.45rem;font-weight:400;color:var(--o);transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq p{padding:0 22px 20px;color:var(--ink-2);font-size:.97rem;max-width:78ch}
+
+.cta{background:linear-gradient(140deg,#F4610A,#C2410C 60%,#8A2C06);color:#fff;text-align:center}
+.cta h2{margin-bottom:14px}
+.cta p{max-width:56ch;margin:0 auto 28px;color:rgba(255,255,255,.92);font-size:1.06rem}
+.cta-btns{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+
+footer{background:#100B08;color:rgba(255,255,255,.62);padding:56px 0 30px;font-size:.91rem}
+.f-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px}
+footer h4{color:#fff;font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:15px;font-weight:800}
+footer a{color:rgba(255,255,255,.62);display:block;margin-bottom:9px;text-decoration:none}
+footer a:hover{color:var(--o-2)}
+.f-brand{display:flex;align-items:center;gap:11px;font-weight:850;font-size:1.06rem;color:#fff;margin-bottom:13px}
+.f-brand img{width:33px;height:33px;border-radius:9px}
+.f-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.85rem}
+@media(max-width:860px){.f-grid{grid-template-columns:1fr 1fr;gap:28px}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.thefreightcalculator.app/#organization",
+      "name": "Freight Calculator",
+      "legalName": "Sea & Shore Services",
+      "url": "https://www.thefreightcalculator.app/",
+      "logo": "https://www.thefreightcalculator.app/assets/app-icon.png",
+      "sameAs": [
+        "https://www.thefreightcalculator.ai/",
+        "https://play.google.com/store/apps/details?id=com.seaandshoreservices.freightcalculator"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.thefreightcalculator.app/#website",
+      "url": "https://www.thefreightcalculator.app/",
+      "name": "Freight Calculator Tools",
+      "description": "Free online CBM, chargeable weight, container load and freight cost calculators.",
+      "publisher": { "@id": "https://www.thefreightcalculator.app/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://www.thefreightcalculator.app/#webapp",
+      "name": "Freight Calculator Tools — CBM & Chargeable Weight Calculator",
+      "url": "https://www.thefreightcalculator.app/",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Freight & Logistics Calculator",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "description": "A free suite of six freight calculators: CBM (cubic metre) calculator, chargeable and volumetric weight calculator, 20ft/40ft container load calculator, loading metre (LDM) calculator, freight cost estimator and cargo density calculator.",
+      "featureList": [
+        "CBM / cubic metre volume calculator",
+        "Volumetric and chargeable weight calculator for sea, air, courier and road",
+        "20ft, 40ft and 40ft High Cube container load calculator",
+        "Loading metre (LDM) calculator for European road freight",
+        "All-in freight cost estimator with THC, BAF and clearance",
+        "Cargo density calculator in kg per CBM"
+      ],
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": { "@id": "https://www.thefreightcalculator.app/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://www.thefreightcalculator.app/#howto-cbm",
+      "name": "How to calculate CBM for a shipment",
+      "description": "Convert carton dimensions into cubic metres (CBM) to price LCL ocean freight and plan container loading.",
+      "totalTime": "PT1M",
+      "supply": [{ "@type": "HowToSupply", "name": "Carton length, width and height in centimetres" }, { "@type": "HowToSupply", "name": "Number of cartons" }],
+      "tool": [{ "@type": "HowToTool", "name": "Freight Calculator CBM calculator" }],
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Measure one carton", "text": "Measure the length, width and height of a single carton at its widest points, in centimetres. Always measure the outer packed dimensions, not the product." },
+        { "@type": "HowToStep", "position": 2, "name": "Convert to metres", "text": "Divide each dimension by 100 to convert centimetres to metres." },
+        { "@type": "HowToStep", "position": 3, "name": "Multiply the three dimensions", "text": "Multiply length x width x height in metres to get the CBM of one carton." },
+        { "@type": "HowToStep", "position": 4, "name": "Multiply by quantity", "text": "Multiply the single-carton CBM by the number of cartons to get total shipment volume in CBM." }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://www.thefreightcalculator.app/#howto-chargeable",
+      "name": "How to calculate chargeable weight",
+      "description": "Work out the weight a carrier will actually bill you on by comparing gross weight with volumetric weight.",
+      "totalTime": "PT1M",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Calculate the volume in CBM", "text": "Multiply length x width x height in metres, then multiply by the number of pieces." },
+        { "@type": "HowToStep", "position": 2, "name": "Apply the mode divisor", "text": "Multiply the CBM by the divisor for your transport mode: 1000 kg per CBM for sea freight, 167 kg per CBM for air freight, 200 kg per CBM for courier, 333 kg per CBM for European road freight. The result is volumetric weight." },
+        { "@type": "HowToStep", "position": 3, "name": "Compare with gross weight", "text": "Weigh the shipment including packaging and pallets to get gross weight." },
+        { "@type": "HowToStep", "position": 4, "name": "Take the greater figure", "text": "Chargeable weight is whichever is higher: gross weight or volumetric weight. That is the number your rate is multiplied by." }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.thefreightcalculator.app/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you calculate CBM?",
+          "acceptedAnswer": { "@type": "Answer", "text": "CBM = length x width x height, with every dimension in metres. A 120 cm x 100 cm x 80 cm carton is 1.2 x 1.0 x 0.8 = 0.96 CBM. Multiply by the number of cartons for the total shipment volume. Always use the outer packed dimensions of the carton, measured at the widest point." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the volumetric weight divisor for air freight?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Air freight uses the IATA volumetric factor of 6000 cubic centimetres per kilogram, which is the same as 167 kg per cubic metre. So an air shipment of 3 CBM has a volumetric weight of 501 kg. Courier and express carriers commonly use 5000 cm3/kg, which equals 200 kg per CBM." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many CBM is a 20ft container?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A standard 20ft container has an internal volume of about 33 CBM, with a realistic usable loading capacity of 25 to 28 CBM. A 40ft standard is about 67 CBM internal and 55 to 58 CBM usable. A 40ft High Cube is about 76 CBM internal and 62 to 66 CBM usable. Usable capacity is lower because of pallet footprints, stacking limits and dunnage." }
+        },
+        {
+          "@type": "Question",
+          "name": "At what volume does FCL become cheaper than LCL?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The break-even is typically between 13 and 15 CBM on most trade lanes. Below that, LCL groupage billed per cubic metre is usually cheaper. Above it, a flat-rate 20ft FCL container tends to win, and it also avoids LCL consolidation delays and extra destination handling charges." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a loading metre (LDM)?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A loading metre is one metre of trailer floor space across the full 2.4 metre width of a standard European trailer. LDM = (length in metres x width in metres) / 2.4 per item. European road freight is priced per loading metre, and one LDM is conventionally converted to 1750 kg of chargeable weight." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are these freight calculators free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every calculator on this site is completely free, requires no signup or email address, and runs entirely in your browser — none of your cargo data is sent anywhere." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.thefreightcalculator.app/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Freight Calculator Tools", "item": "https://www.thefreightcalculator.app/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+<a href="#main" class="sr">Skip to content</a>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/"><img src="/assets/app-icon.png" alt="Freight Calculator icon" width="33" height="33">FREIGHT<span>CALCULATOR</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#cbm">CBM</a>
+      <a href="#chargeable">Chargeable weight</a>
+      <a href="#container">Container load</a>
+      <a href="#ldm">LDM</a>
+      <a href="#cost">Freight cost</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary" href="https://www.thefreightcalculator.ai/">Book freight →</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" style="padding-top:64px">
+  <div class="wrap">
+    <span class="eyebrow">Free · No signup · Instant</span>
+    <h1>Freight calculators that do <em>the whole quote</em>, not just the maths.</h1>
+    <p>Six free tools used by freight forwarders, importers, exporters and warehouse teams every day — CBM, chargeable weight, container loading, loading metres, freight cost and cargo density. Everything runs in your browser; nothing is uploaded.</p>
+    <div class="jump">
+      <a href="#cbm">📦 CBM Calculator</a>
+      <a href="#chargeable">⚖️ Chargeable Weight</a>
+      <a href="#container">🚢 Container Load</a>
+      <a href="#ldm">📏 Loading Metre</a>
+      <a href="#cost">💰 Freight Cost</a>
+      <a href="#density">📊 Cargo Density</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 1. CBM ============== -->
+<section id="cbm" style="padding-bottom:0">
+  <div class="wrap narrow">
+    <div class="tool">
+      <div class="tool-head">
+        <div class="tool-ico" aria-hidden="true">📦</div>
+        <div>
+          <h2>CBM Calculator</h2>
+          <p>Convert carton dimensions into cubic metres. CBM is the base unit for LCL ocean freight pricing and for working out how much of a container your cargo will fill.</p>
+        </div>
+      </div>
+      <div class="row c4">
+        <div class="field"><label for="a_l">Length</label><input id="a_l" type="number" inputmode="decimal" value="120" min="0" step="any"></div>
+        <div class="field"><label for="a_w">Width</label><input id="a_w" type="number" inputmode="decimal" value="100" min="0" step="any"></div>
+        <div class="field"><label for="a_h">Height</label><input id="a_h" type="number" inputmode="decimal" value="80" min="0" step="any"></div>
+        <div class="field"><label for="a_u">Unit</label><select id="a_u"><option value="100">Centimetres</option><option value="1000">Millimetres</option><option value="1">Metres</option><option value="39.3701">Inches</option></select></div>
+      </div>
+      <div class="row c2">
+        <div class="field"><label for="a_q">Number of cartons</label><input id="a_q" type="number" inputmode="numeric" value="20" min="1" step="1"></div>
+        <div class="field"><label for="a_kg">Gross weight per carton (kg)</label><input id="a_kg" type="number" inputmode="decimal" value="180" min="0" step="any"></div>
+      </div>
+      <div class="results c3">
+        <div class="out"><b id="a_one">—</b><span>CBM per carton</span></div>
+        <div class="out hi"><b id="a_tot">—</b><span>Total CBM</span></div>
+        <div class="out"><b id="a_gw">—</b><span>Total gross weight (kg)</span></div>
+      </div>
+      <p class="verdict" id="a_v">—</p>
+      <p class="formula">CBM = (L ÷ unit) × (W ÷ unit) × (H ÷ unit) × quantity</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 2. CHARGEABLE WEIGHT ============== -->
+<section id="chargeable" style="padding-block:26px">
+  <div class="wrap narrow">
+    <div class="tool">
+      <div class="tool-head">
+        <div class="tool-ico" aria-hidden="true">⚖️</div>
+        <div>
+          <h2>Chargeable &amp; Volumetric Weight Calculator</h2>
+          <p>Carriers bill on whichever is greater — actual gross weight or volumetric (dimensional) weight. This is the single number that decides your freight invoice.</p>
+        </div>
+      </div>
+      <div class="row c4">
+        <div class="field"><label for="b_l">Length (cm)</label><input id="b_l" type="number" inputmode="decimal" value="120" min="0" step="any"></div>
+        <div class="field"><label for="b_w">Width (cm)</label><input id="b_w" type="number" inputmode="decimal" value="100" min="0" step="any"></div>
+        <div class="field"><label for="b_h">Height (cm)</label><input id="b_h" type="number" inputmode="decimal" value="80" min="0" step="any"></div>
+        <div class="field"><label for="b_q">Pieces</label><input id="b_q" type="number" inputmode="numeric" value="10" min="1" step="1"></div>
+      </div>
+      <div class="row c2">
+        <div class="field"><label for="b_kg">Gross weight per piece (kg)</label><input id="b_kg" type="number" inputmode="decimal" value="120" min="0" step="any"></div>
+        <div class="field"><label for="b_m">Transport mode</label>
+          <select id="b_m">
+            <option value="167">Air freight — IATA 1:6000 (167 kg/CBM)</option>
+            <option value="200">Courier / express — 1:5000 (200 kg/CBM)</option>
+            <option value="1000">Sea freight LCL — 1000 kg/CBM (W/M)</option>
+            <option value="333">Road freight EU — 333 kg/CBM</option>
+            <option value="250">Air charter / ULD — 250 kg/CBM</option>
+          </select>
+        </div>
+      </div>
+      <div class="results c3">
+        <div class="out"><b id="b_cbm">—</b><span>Total volume (CBM)</span></div>
+        <div class="out"><b id="b_vol">—</b><span>Volumetric weight (kg)</span></div>
+        <div class="out hi"><b id="b_chg">—</b><span>Chargeable weight (kg)</span></div>
+      </div>
+      <p class="verdict" id="b_v">—</p>
+      <p class="formula">Volumetric weight = CBM × divisor · Chargeable weight = max(gross weight, volumetric weight)</p>
+
+      <h3 style="margin:28px 0 10px">Volumetric divisors by mode</h3>
+      <div class="scroll">
+      <table class="tbl">
+        <thead><tr><th>Mode</th><th>Divisor</th><th>kg per CBM</th><th>Typically applies to</th></tr></thead>
+        <tbody>
+          <tr><td>Air freight</td><td>6000 cm³/kg</td><td>167 kg</td><td>IATA standard airfreight, airport-to-airport</td></tr>
+          <tr><td>Courier / express</td><td>5000 cm³/kg</td><td>200 kg</td><td>DHL, FedEx, UPS, TNT parcel and express</td></tr>
+          <tr><td>Sea LCL (W/M)</td><td>1 CBM = 1 tonne</td><td>1000 kg</td><td>Ocean groupage, weight-or-measure billing</td></tr>
+          <tr><td>Road freight (EU)</td><td>3 m³/tonne</td><td>333 kg</td><td>European groupage and LTL trucking</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 3. CONTAINER LOAD ============== -->
+<section id="container" style="padding-block:26px">
+  <div class="wrap narrow">
+    <div class="tool">
+      <div class="tool-head">
+        <div class="tool-ico" aria-hidden="true">🚢</div>
+        <div>
+          <h2>Container Load Calculator — 20ft, 40ft &amp; 40ft High Cube</h2>
+          <p>Estimate how much of a container your cargo fills, how many containers you need, and whether FCL beats paying per CBM on LCL.</p>
+        </div>
+      </div>
+      <div class="row c3">
+        <div class="field"><label for="c_cbm">Total shipment CBM</label><input id="c_cbm" type="number" inputmode="decimal" value="19.2" min="0" step="any"></div>
+        <div class="field"><label for="c_kg">Total gross weight (kg)</label><input id="c_kg" type="number" inputmode="decimal" value="3600" min="0" step="any"></div>
+        <div class="field"><label for="c_t">Container type</label>
+          <select id="c_t">
+            <option value="20">20ft Standard — 28 CBM usable / 28,000 kg</option>
+            <option value="40" selected>40ft Standard — 58 CBM usable / 26,500 kg</option>
+            <option value="40hc">40ft High Cube — 66 CBM usable / 26,000 kg</option>
+          </select>
+        </div>
+      </div>
+      <div class="results c3">
+        <div class="out"><b id="c_fill">—</b><span>Container fill by volume</span></div>
+        <div class="out"><b id="c_wfill">—</b><span>Fill by payload weight</span></div>
+        <div class="out hi"><b id="c_need">—</b><span>Containers required</span></div>
+      </div>
+      <p class="verdict" id="c_v">—</p>
+
+      <h3 style="margin:28px 0 10px">Standard container capacities</h3>
+      <div class="scroll">
+      <table class="tbl">
+        <thead><tr><th>Container</th><th>Internal volume</th><th>Usable CBM</th><th>Max payload</th><th>Internal L×W×H</th></tr></thead>
+        <tbody>
+          <tr><td>20ft Standard</td><td>~33 CBM</td><td>25–28 CBM</td><td>~28,000 kg</td><td>5.90 × 2.35 × 2.39 m</td></tr>
+          <tr><td>40ft Standard</td><td>~67 CBM</td><td>55–58 CBM</td><td>~26,500 kg</td><td>12.03 × 2.35 × 2.39 m</td></tr>
+          <tr><td>40ft High Cube</td><td>~76 CBM</td><td>62–66 CBM</td><td>~26,000 kg</td><td>12.03 × 2.35 × 2.69 m</td></tr>
+          <tr><td>45ft High Cube</td><td>~86 CBM</td><td>72–76 CBM</td><td>~27,700 kg</td><td>13.56 × 2.35 × 2.69 m</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="formula">Usable CBM is always below internal volume — pallet footprints, stacking limits and dunnage typically cost 12–18% of the box.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 4. LDM ============== -->
+<section id="ldm" style="padding-block:26px">
+  <div class="wrap narrow">
+    <div class="tool">
+      <div class="tool-head">
+        <div class="tool-ico" aria-hidden="true">📏</div>
+        <div>
+          <h2>Loading Metre (LDM) Calculator</h2>
+          <p>European road freight is priced per loading metre — one metre of trailer floor across its full 2.4 m width. Standard trailers offer 13.6 loading metres.</p>
+        </div>
+      </div>
+      <div class="row c4">
+        <div class="field"><label for="d_l">Item length (cm)</label><input id="d_l" type="number" inputmode="decimal" value="120" min="0" step="any"></div>
+        <div class="field"><label for="d_w">Item width (cm)</label><input id="d_w" type="number" inputmode="decimal" value="80" min="0" step="any"></div>
+        <div class="field"><label for="d_q">Quantity</label><input id="d_q" type="number" inputmode="numeric" value="12" min="1" step="1"></div>
+        <div class="field"><label for="d_s">Stackable?</label><select id="d_s"><option value="1">No — single layer</option><option value="2">Yes — 2 layers high</option><option value="3">Yes — 3 layers high</option></select></div>
+      </div>
+      <div class="results c3">
+        <div class="out"><b id="d_ldm">—</b><span>Loading metres (LDM)</span></div>
+        <div class="out"><b id="d_pct">—</b><span>Of a 13.6 m trailer</span></div>
+        <div class="out hi"><b id="d_chg">—</b><span>Chargeable weight (kg)</span></div>
+      </div>
+      <p class="verdict" id="d_v">—</p>
+      <p class="formula">LDM = (length(m) × width(m) ÷ 2.4) × qty ÷ stack layers · Chargeable weight ≈ LDM × 1750 kg</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 5. FREIGHT COST ============== -->
+<section id="cost" style="padding-block:26px">
+  <div class="wrap narrow">
+    <div class="tool">
+      <div class="tool-head">
+        <div class="tool-ico" aria-hidden="true">💰</div>
+        <div>
+          <h2>Freight Cost Estimator</h2>
+          <p>Apply your lane rate and the surcharges that appear on every freight invoice — terminal handling, bunker adjustment, customs clearance and documentation — for an all-in number.</p>
+        </div>
+      </div>
+      <div class="row c3">
+        <div class="field"><label for="e_u">Billing basis</label>
+          <select id="e_u">
+            <option value="cbm">Per CBM (LCL ocean)</option>
+            <option value="kg">Per kg (air / courier)</option>
+            <option value="flat">Flat rate per container (FCL)</option>
+          </select>
+        </div>
+        <div class="field"><label for="e_qty" id="e_qtyL">Chargeable units</label><input id="e_qty" type="number" inputmode="decimal" value="19.2" min="0" step="any"></div>
+        <div class="field"><label for="e_rate">Rate per unit</label><input id="e_rate" type="number" inputmode="decimal" value="48" min="0" step="any"></div>
+      </div>
+      <div class="row c4">
+        <div class="field"><label for="e_thc">THC (origin + dest)</label><input id="e_thc" type="number" inputmode="decimal" value="320" min="0" step="any"></div>
+        <div class="field"><label for="e_baf">BAF / fuel surcharge</label><input id="e_baf" type="number" inputmode="decimal" value="145" min="0" step="any"></div>
+        <div class="field"><label for="e_cus">Customs clearance</label><input id="e_cus" type="number" inputmode="decimal" value="110" min="0" step="any"></div>
+        <div class="field"><label for="e_doc">Docs &amp; B/L fees</label><input id="e_doc" type="number" inputmode="decimal" value="75" min="0" step="any"></div>
+      </div>
+      <div class="results c3">
+        <div class="out"><b id="e_base">—</b><span>Base freight</span></div>
+        <div class="out"><b id="e_sur">—</b><span>Total surcharges</span></div>
+        <div class="out hi"><b id="e_all">—</b><span>All-in freight cost</span></div>
+      </div>
+      <p class="verdict" id="e_v">—</p>
+      <p class="formula">All-in = (chargeable units × rate) + THC + BAF + clearance + documentation</p>
+      <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.seaandshoreservices.freightcalculator" rel="noopener">Get a real bookable rate →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 6. DENSITY ============== -->
+<section id="density" style="padding-block:26px 64px">
+  <div class="wrap narrow">
+    <div class="tool" style="margin-bottom:0">
+      <div class="tool-head">
+        <div class="tool-ico" aria-hidden="true">📊</div>
+        <div>
+          <h2>Cargo Density Calculator</h2>
+          <p>Density in kg/CBM tells you instantly whether your cargo will be billed on weight or on volume — before you ever ask for a rate.</p>
+        </div>
+      </div>
+      <div class="row c2">
+        <div class="field"><label for="f_cbm">Total volume (CBM)</label><input id="f_cbm" type="number" inputmode="decimal" value="19.2" min="0" step="any"></div>
+        <div class="field"><label for="f_kg">Total gross weight (kg)</label><input id="f_kg" type="number" inputmode="decimal" value="3600" min="0" step="any"></div>
+      </div>
+      <div class="results c2">
+        <div class="out hi"><b id="f_d">—</b><span>Density (kg per CBM)</span></div>
+        <div class="out"><b id="f_lb">—</b><span>Density (lb per ft³)</span></div>
+      </div>
+      <p class="verdict" id="f_v">—</p>
+      <p class="formula">Density = total gross weight (kg) ÷ total volume (CBM)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FAQ ============== -->
+<section id="faq" style="background:#fff;border-block:1px solid var(--line)">
+  <div class="wrap narrow">
+    <div style="margin-bottom:34px">
+      <span class="eyebrow">FAQ</span>
+      <h2>Freight calculation questions</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>How do you calculate CBM?</summary>
+        <p>CBM = length × width × height, with every dimension in metres. A 120 cm × 100 cm × 80 cm carton is 1.2 × 1.0 × 0.8 = 0.96 CBM. Multiply by the number of cartons for the total shipment volume. Always use the outer packed dimensions of the carton, measured at the widest point.</p>
+      </details>
+      <details>
+        <summary>What is the volumetric weight divisor for air freight?</summary>
+        <p>Air freight uses the IATA volumetric factor of 6000 cm³/kg, which is the same as 167 kg per cubic metre. So an air shipment of 3 CBM has a volumetric weight of 501 kg. Courier and express carriers commonly use 5000 cm³/kg, which equals 200 kg per CBM.</p>
+      </details>
+      <details>
+        <summary>How many CBM is a 20ft container?</summary>
+        <p>A standard 20ft container has an internal volume of about 33 CBM, with a realistic usable loading capacity of 25 to 28 CBM. A 40ft standard is about 67 CBM internal and 55 to 58 CBM usable. A 40ft High Cube is about 76 CBM internal and 62 to 66 CBM usable. Usable capacity is lower because of pallet footprints, stacking limits and dunnage.</p>
+      </details>
+      <details>
+        <summary>At what volume does FCL become cheaper than LCL?</summary>
+        <p>The break-even is typically between 13 and 15 CBM on most trade lanes. Below that, LCL groupage billed per cubic metre is usually cheaper. Above it, a flat-rate 20ft FCL container tends to win, and it also avoids LCL consolidation delays and extra destination handling charges.</p>
+      </details>
+      <details>
+        <summary>What is a loading metre (LDM)?</summary>
+        <p>A loading metre is one metre of trailer floor space across the full 2.4 metre width of a standard European trailer. LDM = (length in metres × width in metres) ÷ 2.4 per item. European road freight is priced per loading metre, and one LDM is conventionally converted to 1750 kg of chargeable weight.</p>
+      </details>
+      <details>
+        <summary>Are these freight calculators free?</summary>
+        <p>Yes. Every calculator on this site is completely free, requires no signup or email address, and runs entirely in your browser — none of your cargo data is sent anywhere.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Now turn that number into a booked shipment</h2>
+    <p>Freight Calculator gives you instant quotes for deep-sea, road and air transport, with transparent pricing, customs clearance and real-time tracking.</p>
+    <div class="cta-btns">
+      <a class="btn btn-onDark" href="https://play.google.com/store/apps/details?id=com.seaandshoreservices.freightcalculator" rel="noopener">▶ Get it on Google Play</a>
+      <a class="btn btn-outlineLight" href="https://www.thefreightcalculator.ai/">Visit thefreightcalculator.ai</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <div class="f-brand"><img src="/assets/app-icon.png" alt="" width="33" height="33" loading="lazy">FREIGHT<span style="color:var(--o)">CALCULATOR</span></div>
+        <p style="max-width:36ch">Free freight calculators for CBM, chargeable weight, container loading and shipping cost — by Sea &amp; Shore Services.</p>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <a href="#cbm">CBM calculator</a>
+        <a href="#chargeable">Chargeable weight</a>
+        <a href="#container">Container load</a>
+        <a href="#ldm">Loading metre</a>
+        <a href="#cost">Freight cost</a>
+        <a href="#density">Cargo density</a>
+      </div>
+      <div>
+        <h4>Freight services</h4>
+        <a href="https://www.thefreightcalculator.ai/#services">Deep-sea FCL &amp; LCL</a>
+        <a href="https://www.thefreightcalculator.ai/#services">Road transport</a>
+        <a href="https://www.thefreightcalculator.ai/#services">Air freight</a>
+        <a href="https://www.thefreightcalculator.ai/#services">Warehousing</a>
+      </div>
+      <div>
+        <h4>Learn</h4>
+        <a href="https://www.thefreightcalculator.ai/#glossary">Freight glossary</a>
+        <a href="https://www.thefreightcalculator.ai/#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://play.google.com/store/apps/details?id=com.seaandshoreservices.freightcalculator" rel="noopener">Android app</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© <span id="yr">2026</span> Sea &amp; Shore Services · Freight Calculator</span>
+      <span>thefreightcalculator.app · <a href="https://www.thefreightcalculator.ai/">thefreightcalculator.ai</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i);};
+  function n(el){var v=parseFloat(el.value);return isFinite(v)&&v>=0?v:0;}
+  function f(v,d){return v.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});}
+  function bind(ids,fn){ids.forEach(function(i){var e=$(i);e.addEventListener('input',fn);e.addEventListener('change',fn);});fn();}
+
+  /* ---- 1. CBM ---- */
+  bind(['a_l','a_w','a_h','a_u','a_q','a_kg'],function(){
+    var u=parseFloat($('a_u').value), q=Math.max(1,Math.floor(n($('a_q')))||1);
+    var one=(n($('a_l'))/u)*(n($('a_w'))/u)*(n($('a_h'))/u);
+    var tot=one*q, gw=n($('a_kg'))*q;
+    $('a_one').textContent=f(one,4); $('a_tot').textContent=f(tot,3); $('a_gw').textContent=f(gw,1);
+    var msg;
+    if(tot===0){msg='Enter carton dimensions to calculate your shipment volume.';}
+    else if(tot<13){msg='At <strong>'+f(tot,2)+' CBM</strong> this is comfortably an <strong>LCL</strong> shipment — you’ll be billed per cubic metre. It fills about '+f(tot/28*100,0)+'% of a 20ft container.';}
+    else if(tot<28){msg='At <strong>'+f(tot,2)+' CBM</strong> you are past the usual 13–15 CBM break-even — price a <strong>20ft FCL container</strong> against LCL, it will probably be cheaper. This fills about '+f(tot/28*100,0)+'% of a 20ft box.';}
+    else {msg='At <strong>'+f(tot,2)+' CBM</strong> you need <strong>FCL</strong>. That is roughly '+f(tot/58,2)+' × 40ft containers or '+f(tot/28,2)+' × 20ft containers.';}
+    $('a_v').innerHTML=msg;
+  });
+
+  /* ---- 2. Chargeable weight ---- */
+  bind(['b_l','b_w','b_h','b_q','b_kg','b_m'],function(){
+    var q=Math.max(1,Math.floor(n($('b_q')))||1);
+    var cbm=(n($('b_l'))/100)*(n($('b_w'))/100)*(n($('b_h'))/100)*q;
+    var div=parseFloat($('b_m').value), vol=cbm*div, gw=n($('b_kg'))*q, chg=Math.max(vol,gw);
+    $('b_cbm').textContent=f(cbm,3); $('b_vol').textContent=f(vol,1); $('b_chg').textContent=f(chg,1);
+    var msg;
+    if(cbm===0){msg='Enter dimensions to compare volumetric weight against actual weight.';}
+    else if(vol>gw){msg='<strong>Volume-billed.</strong> Your cargo is light for its size, so the carrier charges on <strong>'+f(vol,1)+' kg</strong> volumetric weight instead of '+f(gw,1)+' kg actual — you are paying for '+f(vol-gw,1)+' kg of air. Tighter packing or a smaller carton would cut the bill.';}
+    else if(gw>vol){msg='<strong>Weight-billed.</strong> Your cargo is dense, so the carrier charges on <strong>'+f(gw,1)+' kg</strong> actual weight. Density is '+f(gw/cbm,0)+' kg/CBM against a break-even of '+f(div,0)+' kg/CBM.';}
+    else{msg='Gross and volumetric weight are identical at <strong>'+f(chg,1)+' kg</strong>.';}
+    $('b_v').innerHTML=msg;
+  });
+
+  /* ---- 3. Container load ---- */
+  var CT={'20':{n:'20ft Standard',cbm:28,kg:28000},'40':{n:'40ft Standard',cbm:58,kg:26500},'40hc':{n:'40ft High Cube',cbm:66,kg:26000}};
+  bind(['c_cbm','c_kg','c_t'],function(){
+    var t=CT[$('c_t').value], cbm=n($('c_cbm')), kg=n($('c_kg'));
+    var vf=cbm/t.cbm*100, wf=kg/t.kg*100;
+    var need=Math.max(Math.ceil(cbm/t.cbm),Math.ceil(kg/t.kg))||0;
+    $('c_fill').textContent=f(vf,1)+'%'; $('c_wfill').textContent=f(wf,1)+'%'; $('c_need').textContent=need===0?'—':need+' × '+(need===1?'box':'boxes');
+    var msg;
+    if(cbm===0&&kg===0){msg='Enter your total volume and weight to plan container loading.';}
+    else if(vf>100||wf>100){msg='This exceeds one '+t.n+'. You need <strong>'+need+' containers</strong>'+(wf>vf?' — and you are limited by <strong>weight</strong>, not volume, so consider splitting dense cargo across boxes.':' — you are limited by <strong>volume</strong>.');}
+    else if(vf<45&&cbm>0){msg='You are only using <strong>'+f(vf,0)+'%</strong> of a '+t.n+'. At '+f(cbm,1)+' CBM, <strong>LCL groupage</strong> is very likely cheaper than paying for the whole box.';}
+    else{msg='A single <strong>'+t.n+'</strong> works: '+f(vf,0)+'% full by volume and '+f(wf,0)+'% by payload. You have about <strong>'+f(t.cbm-cbm,1)+' CBM</strong> and '+f(t.kg-kg,0)+' kg of headroom left.';}
+    $('c_v').innerHTML=msg;
+  });
+
+  /* ---- 4. LDM ---- */
+  bind(['d_l','d_w','d_q','d_s'],function(){
+    var q=Math.max(1,Math.floor(n($('d_q')))||1), st=parseFloat($('d_s').value);
+    var ldm=((n($('d_l'))/100)*(n($('d_w'))/100)/2.4)*q/st;
+    var pct=ldm/13.6*100, chg=ldm*1750;
+    $('d_ldm').textContent=f(ldm,2); $('d_pct').textContent=f(pct,1)+'%'; $('d_chg').textContent=f(chg,0);
+    var msg;
+    if(ldm===0){msg='Enter item footprint and quantity to calculate loading metres.';}
+    else if(pct>100){msg='At <strong>'+f(ldm,2)+' LDM</strong> this exceeds a single 13.6 m trailer — you need <strong>'+Math.ceil(ldm/13.6)+' trucks</strong> or a full-load (FTL) solution.';}
+    else if(pct>75){msg='At <strong>'+f(ldm,2)+' LDM</strong> you are using '+f(pct,0)+'% of a trailer. Price <strong>FTL</strong> against part-load — a full truck is often cheaper above 75%.';}
+    else{msg='<strong>'+f(ldm,2)+' loading metres</strong> — '+f(pct,0)+'% of a 13.6 m trailer. Billed as a part load (LTL) at roughly '+f(chg,0)+' kg chargeable weight.';}
+    $('d_v').innerHTML=msg;
+  });
+
+  /* ---- 5. Freight cost ---- */
+  var LBL={cbm:'Chargeable CBM',kg:'Chargeable weight (kg)',flat:'Number of containers'};
+  bind(['e_u','e_qty','e_rate','e_thc','e_baf','e_cus','e_doc'],function(){
+    var u=$('e_u').value;
+    $('e_qtyL').textContent=LBL[u];
+    var base=n($('e_qty'))*n($('e_rate'));
+    var sur=n($('e_thc'))+n($('e_baf'))+n($('e_cus'))+n($('e_doc'));
+    var all=base+sur;
+    $('e_base').textContent=f(base,2); $('e_sur').textContent=f(sur,2); $('e_all').textContent=f(all,2);
+    var msg;
+    if(all===0){msg='Enter your lane rate and surcharges for an all-in freight cost.';}
+    else {
+      var pc=sur/all*100;
+      msg='Surcharges are <strong>'+f(pc,0)+'%</strong> of your total. '+
+        (pc>40?'That is high — on small shipments fixed fees dominate, so consolidating into fewer, larger shipments cuts your cost per CBM sharply.'
+              :'That is a normal ratio. Effective all-in cost is <strong>'+f(all/(n($('e_qty'))||1),2)+'</strong> per '+(u==='cbm'?'CBM':u==='kg'?'kg':'container')+'.');
+    }
+    $('e_v').innerHTML=msg;
+  });
+
+  /* ---- 6. Density ---- */
+  bind(['f_cbm','f_kg'],function(){
+    var cbm=n($('f_cbm')), kg=n($('f_kg'));
+    var d=cbm>0?kg/cbm:0;
+    $('f_d').textContent=cbm>0?f(d,1):'—';
+    $('f_lb').textContent=cbm>0?f(d*0.0624280,2):'—';
+    var msg;
+    if(cbm===0){msg='Enter volume and weight to calculate cargo density.';}
+    else if(d<167){msg='At <strong>'+f(d,0)+' kg/CBM</strong> this is <strong>low-density cargo</strong>. It will be volume-billed on air, courier and road freight, and priced per CBM on ocean LCL. Reducing packaging pays off directly.';}
+    else if(d<333){msg='At <strong>'+f(d,0)+' kg/CBM</strong> this is <strong>medium density</strong>. Air and courier will bill on actual weight, but European road freight will still bill on volume.';}
+    else if(d<1000){msg='At <strong>'+f(d,0)+' kg/CBM</strong> this is <strong>dense cargo</strong>. Every mode except ocean LCL will bill on actual weight.';}
+    else{msg='At <strong>'+f(d,0)+' kg/CBM</strong> this is <strong>very dense cargo</strong> — weight-billed everywhere, including ocean LCL. Watch container payload limits before volume limits.';}
+    $('f_v').innerHTML=msg;
+  });
+
+  $('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

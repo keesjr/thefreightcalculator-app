@@ -1,0 +1,13 @@
+{
+  "name": "Freight Calculator Tools — CBM & Chargeable Weight",
+  "short_name": "Freight Tools",
+  "description": "Free CBM, chargeable weight, container load, LDM and freight cost calculators.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF8F3",
+  "theme_color": "#F4610A",
+  "icons": [
+    { "src": "/assets/app-icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
