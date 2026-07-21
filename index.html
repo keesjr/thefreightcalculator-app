@@ -135,6 +135,20 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,248,243,.88);backdro
 .tbl td:first-child{font-weight:700}
 .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
 
+/* contextual hand-off bar at the end of each tool */
+.next{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  margin-top:22px;padding:17px 22px;background:linear-gradient(120deg,#FFF3EA,#FFE8D8);
+  border:1px solid #FFD9C2;border-radius:16px}
+.next p{margin:0;flex:1 1 250px;font-size:.95rem;color:var(--ink-2)}
+.next p strong{color:var(--o-deep);font-weight:800}
+.next .btn{flex:0 0 auto;padding:12px 22px;font-size:.92rem}
+@media(max-width:560px){.next{padding:16px}.next .btn{width:100%}}
+
+/* positioning strip */
+.who{padding:30px 0;background:#fff;border-bottom:1px solid var(--line)}
+.who p{margin:0 auto;max-width:78ch;text-align:center;color:var(--ink-2);font-size:1rem}
+.who strong{color:var(--ink)}
+
 .faq details{background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:11px}
 .faq summary{cursor:pointer;list-style:none;padding:19px 54px 19px 22px;font-weight:750;font-size:1rem;position:relative}
 .faq summary::-webkit-details-marker{display:none}
@@ -307,8 +321,8 @@ footer a:hover{color:var(--o-2)}
 <section class="hero" style="padding-top:64px">
   <div class="wrap">
     <span class="eyebrow">Free · No signup · Instant</span>
-    <h1>Freight calculators that do <em>the whole quote</em>, not just the maths.</h1>
-    <p>Six free tools used by freight forwarders, importers, exporters and warehouse teams every day — CBM, chargeable weight, container loading, loading metres, freight cost and cargo density. Everything runs in your browser; nothing is uploaded.</p>
+    <h1>Free freight calculators, from the people who <em>actually move the containers</em>.</h1>
+    <p>Six tools for the numbers every shipment starts with — CBM, chargeable weight, container loading, loading metres, freight cost and cargo density. All free, all instant, nothing uploaded. When you need a real price to move it from A to B, that's what our app is for.</p>
     <div class="jump">
       <a href="#cbm">📦 CBM Calculator</a>
       <a href="#chargeable">⚖️ Chargeable Weight</a>
@@ -317,6 +331,12 @@ footer a:hover{color:var(--o-2)}
       <a href="#cost">💰 Freight Cost</a>
       <a href="#density">📊 Cargo Density</a>
     </div>
+  </div>
+</section>
+
+<section class="who">
+  <div class="wrap">
+    <p><strong>We're a freight forwarder — we move containers, we don't pack them.</strong> These calculators are free because they're the first step of every quote we write. Work out your volume and chargeable weight here, then get a real, bookable price for moving it door to door in the app.</p>
   </div>
 </section>
 
@@ -348,6 +368,10 @@ footer a:hover{color:var(--o-2)}
       </div>
       <p class="verdict" id="a_v">—</p>
       <p class="formula">CBM = (L ÷ unit) × (W ÷ unit) × (H ÷ unit) × quantity</p>
+      <div class="next">
+        <p id="a_next">Got your volume? The next question is what it costs to move.</p>
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.seaandshoreservices.freightcalculator" rel="noopener">Price this shipment →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -388,6 +412,10 @@ footer a:hover{color:var(--o-2)}
       </div>
       <p class="verdict" id="b_v">—</p>
       <p class="formula">Volumetric weight = CBM × divisor · Chargeable weight = max(gross weight, volumetric weight)</p>
+      <div class="next">
+        <p id="b_next">This is the number your rate gets multiplied by. Want the rate?</p>
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.seaandshoreservices.freightcalculator" rel="noopener">Get a real rate →</a>
+      </div>
 
       <h3 style="margin:28px 0 10px">Volumetric divisors by mode</h3>
       <div class="scroll">
@@ -433,6 +461,10 @@ footer a:hover{color:var(--o-2)}
         <div class="out hi"><b id="c_need">—</b><span>Containers required</span></div>
       </div>
       <p class="verdict" id="c_v">—</p>
+      <div class="next">
+        <p id="c_next">Know what you need? Find out what it costs to move it.</p>
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.seaandshoreservices.freightcalculator" rel="noopener">Price this container →</a>
+      </div>
 
       <h3 style="margin:28px 0 10px">Standard container capacities</h3>
       <div class="scroll">
@@ -475,6 +507,10 @@ footer a:hover{color:var(--o-2)}
       </div>
       <p class="verdict" id="d_v">—</p>
       <p class="formula">LDM = (length(m) × width(m) ÷ 2.4) × qty ÷ stack layers · Chargeable weight ≈ LDM × 1750 kg</p>
+      <div class="next">
+        <p id="d_next">We run door-to-door road freight across Europe and beyond.</p>
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.seaandshoreservices.freightcalculator" rel="noopener">Get a road freight price →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -514,8 +550,9 @@ footer a:hover{color:var(--o-2)}
       </div>
       <p class="verdict" id="e_v">—</p>
       <p class="formula">All-in = (chargeable units × rate) + THC + BAF + clearance + documentation</p>
-      <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
-        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.seaandshoreservices.freightcalculator" rel="noopener">Get a real bookable rate →</a>
+      <div class="next">
+        <p id="e_next">This is only as good as the rate you put in. Ours are live and bookable.</p>
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.seaandshoreservices.freightcalculator" rel="noopener">Get our actual rate →</a>
       </div>
     </div>
   </div>
@@ -542,6 +579,10 @@ footer a:hover{color:var(--o-2)}
       </div>
       <p class="verdict" id="f_v">—</p>
       <p class="formula">Density = total gross weight (kg) ÷ total volume (CBM)</p>
+      <div class="next">
+        <p id="f_next">Density tells you how you'll be billed. We'll tell you what it costs.</p>
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.seaandshoreservices.freightcalculator" rel="noopener">Get a quote →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -652,6 +693,9 @@ footer a:hover{color:var(--o-2)}
     else if(tot<28){msg='At <strong>'+f(tot,2)+' CBM</strong> you are past the usual 13–15 CBM break-even — price a <strong>20ft FCL container</strong> against LCL, it will probably be cheaper. This fills about '+f(tot/28*100,0)+'% of a 20ft box.';}
     else {msg='At <strong>'+f(tot,2)+' CBM</strong> you need <strong>FCL</strong>. That is roughly '+f(tot/58,2)+' × 40ft containers or '+f(tot/28,2)+' × 20ft containers.';}
     $('a_v').innerHTML=msg;
+    $('a_next').innerHTML = tot>0
+      ? 'You have <strong>'+f(tot,2)+' CBM</strong> to move. We ship that door to door — see the real price.'
+      : 'Got your volume? The next question is what it costs to move.';
   });
 
   /* ---- 2. Chargeable weight ---- */
@@ -666,6 +710,9 @@ footer a:hover{color:var(--o-2)}
     else if(gw>vol){msg='<strong>Weight-billed.</strong> Your cargo is dense, so the carrier charges on <strong>'+f(gw,1)+' kg</strong> actual weight. Density is '+f(gw/cbm,0)+' kg/CBM against a break-even of '+f(div,0)+' kg/CBM.';}
     else{msg='Gross and volumetric weight are identical at <strong>'+f(chg,1)+' kg</strong>.';}
     $('b_v').innerHTML=msg;
+    $('b_next').innerHTML = chg>0
+      ? 'Your rate gets multiplied by <strong>'+f(chg,1)+' kg</strong>. We can tell you what that rate actually is.'
+      : 'This is the number your rate gets multiplied by. Want the rate?';
   });
 
   /* ---- 3. Container load ---- */
@@ -681,6 +728,9 @@ footer a:hover{color:var(--o-2)}
     else if(vf<45&&cbm>0){msg='You are only using <strong>'+f(vf,0)+'%</strong> of a '+t.n+'. At '+f(cbm,1)+' CBM, <strong>LCL groupage</strong> is very likely cheaper than paying for the whole box.';}
     else{msg='A single <strong>'+t.n+'</strong> works: '+f(vf,0)+'% full by volume and '+f(wf,0)+'% by payload. You have about <strong>'+f(t.cbm-cbm,1)+' CBM</strong> and '+f(t.kg-kg,0)+' kg of headroom left.';}
     $('c_v').innerHTML=msg;
+    $('c_next').innerHTML = need>0
+      ? 'You need <strong>'+need+' × '+t.n+'</strong>. Get a live port-to-port or door-to-door rate for it.'
+      : 'Know what you need? Find out what it costs to move it.';
   });
 
   /* ---- 4. LDM ---- */
@@ -695,6 +745,9 @@ footer a:hover{color:var(--o-2)}
     else if(pct>75){msg='At <strong>'+f(ldm,2)+' LDM</strong> you are using '+f(pct,0)+'% of a trailer. Price <strong>FTL</strong> against part-load — a full truck is often cheaper above 75%.';}
     else{msg='<strong>'+f(ldm,2)+' loading metres</strong> — '+f(pct,0)+'% of a 13.6 m trailer. Billed as a part load (LTL) at roughly '+f(chg,0)+' kg chargeable weight.';}
     $('d_v').innerHTML=msg;
+    $('d_next').innerHTML = ldm>0
+      ? '<strong>'+f(ldm,2)+' LDM</strong> of trailer space. We run this lane door to door — get a price.'
+      : 'We run door-to-door road freight across Europe and beyond.';
   });
 
   /* ---- 5. Freight cost ---- */
@@ -715,6 +768,9 @@ footer a:hover{color:var(--o-2)}
               :'That is a normal ratio. Effective all-in cost is <strong>'+f(all/(n($('e_qty'))||1),2)+'</strong> per '+(u==='cbm'?'CBM':u==='kg'?'kg':'container')+'.');
     }
     $('e_v').innerHTML=msg;
+    $('e_next').innerHTML = all>0
+      ? 'That estimate is <strong>'+f(all,2)+'</strong> on the rate you entered. Check it against our live rate for the same lane.'
+      : 'This is only as good as the rate you put in. Ours are live and bookable.';
   });
 
   /* ---- 6. Density ---- */
@@ -730,6 +786,9 @@ footer a:hover{color:var(--o-2)}
     else if(d<1000){msg='At <strong>'+f(d,0)+' kg/CBM</strong> this is <strong>dense cargo</strong>. Every mode except ocean LCL will bill on actual weight.';}
     else{msg='At <strong>'+f(d,0)+' kg/CBM</strong> this is <strong>very dense cargo</strong> — weight-billed everywhere, including ocean LCL. Watch container payload limits before volume limits.';}
     $('f_v').innerHTML=msg;
+    $('f_next').innerHTML = cbm>0
+      ? 'At <strong>'+f(d,0)+' kg/CBM</strong> you now know how you\'ll be billed. We\'ll tell you what it costs.'
+      : 'Density tells you how you\'ll be billed. We\'ll tell you what it costs.';
   });
 
   $('yr').textContent=new Date().getFullYear();
