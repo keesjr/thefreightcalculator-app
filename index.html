@@ -41,8 +41,9 @@
   --shadow:0 1px 2px rgba(23,16,12,.04),0 12px 32px -12px rgba(194,65,12,.16);
   --font:system-ui,-apple-system,"Segoe UI Variable Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--font);background:var(--cream);color:var(--ink);line-height:1.65;font-size:17px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:var(--cream);overflow-x:clip}
+body{font-family:var(--font);background:var(--cream);color:var(--ink);line-height:1.65;font-size:17px;
+  width:100%;max-width:100%;overflow-x:clip;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
 a{color:var(--o-deep);text-decoration:none}a:hover{text-decoration:underline}
 h1,h2,h3,h4{line-height:1.14;letter-spacing:-.028em;font-weight:800}
@@ -69,15 +70,29 @@ section{padding:64px 0;scroll-margin-top:76px}
 .btn-outlineLight:hover{background:rgba(255,255,255,.16)}
 
 header{position:sticky;top:0;z-index:60;background:rgba(255,248,243,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;gap:14px;height:68px}
-.brand{display:flex;align-items:center;gap:11px;font-weight:850;font-size:1.05rem;letter-spacing:-.03em;color:var(--ink);text-decoration:none!important}
-.brand img{width:33px;height:33px;border-radius:9px}
+.nav{display:flex;align-items:center;gap:12px;height:68px;min-width:0}
+.brand{display:flex;align-items:center;gap:11px;font-weight:850;font-size:1.05rem;letter-spacing:-.03em;
+  color:var(--ink);text-decoration:none!important;flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden}
+.brand img{width:33px;height:33px;border-radius:9px;flex:0 0 auto}
 .brand span{color:var(--o)}
-.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center;flex:0 0 auto;min-width:0}
 .nav-links a{color:var(--ink-2);font-weight:650;font-size:.92rem;text-decoration:none!important}
 .nav-links a:hover{color:var(--o)}
-.nav .btn{padding:10px 20px;font-size:.9rem}
+.nav .btn{padding:10px 20px;font-size:.9rem;white-space:nowrap}
 @media(max-width:960px){.nav-links a:not(.btn){display:none}}
+@media(max-width:560px){
+  .wrap{padding-inline:16px}
+  .nav{gap:8px;height:62px}
+  .brand{font-size:.95rem;gap:8px}
+  .brand img{width:29px;height:29px}
+  .nav .btn{padding:9px 15px;font-size:.83rem}
+  .nav .btn .full{display:none}
+}
+@media(max-width:380px){
+  .brand{font-size:.86rem}
+  .brand img{width:26px;height:26px}
+  .nav .btn{padding:8px 12px;font-size:.78rem}
+}
 
 .hero{background:radial-gradient(120% 130% at 12% 8%,#FF8A3D,#F4610A 38%,#C2410C 74%,#8A2C06);color:#fff;padding:64px 0 70px;position:relative;overflow:hidden;isolation:isolate}
 .hero::before{content:"";position:absolute;width:820px;height:820px;border-radius:50%;top:-300px;left:-230px;border:2px solid rgba(255,255,255,.1);
@@ -282,7 +297,7 @@ footer a:hover{color:var(--o-2)}
       <a href="#ldm">LDM</a>
       <a href="#cost">Freight cost</a>
       <a href="#faq">FAQ</a>
-      <a class="btn btn-primary" href="https://www.thefreightcalculator.ai/">Book freight →</a>
+      <a class="btn btn-primary" href="https://www.thefreightcalculator.ai/">Book<span class="full">&nbsp;freight</span> →</a>
     </nav>
   </div>
 </header>
